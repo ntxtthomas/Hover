@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Hover In Hover Out Excercise">
+	<title>Document</title>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+		
+		$('img').hover(function(){
+				$(this).attr('src', $(this).attr('data-alt-src'));
+			}, function() {
+				$(this).attr('src', $(this).attr('alt'));
+			})
+	});	
+	</script>
+	<style>
+* {
+	margin: 0; padding: 0;
+}
+#wrapper{
+	width: 600px;
+	height: 650px;
+	margin: 25px auto; 
+	border: 1px solid black; 
+}
+#upper img, #lower img {
+	width: 225px;
+	height: 150px;
+	display: inline-block;
+	vertical-align: top;
+	border: 5px solid black;
+	margin: 20px;
+	overflow: hidden;
+	box-shadow: 0px 3px 0px;
+	position:relative;
+	top:4px
+}
+		#upper img:hover, #lower img:hover {
+			cursor: pointer;
+		}
+		#upper img:active, #lower img:active {
+			box-shadow: 0px 1px 0px;
+			position:relative;
+    		top:7px;
+		}
+h1, h3, h5 {text-align: center;}
+h3 {font-style: italic;}
+h5 {margin-bottom: 15px;}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>jQuery - HoverInHoverOut</h1>
+		<h3>An excercise to example .hover( ) method</h3>
+		<h5>~Hover over the images below~</h5>
+		<div id="upper">
+			<img src="images/shoe0.jpg" alt="images/shoe0.jpg" data-alt-src="images/other0.jpg">
+			<img src="images/shoe1.jpg" alt="images/shoe1.jpg" data-alt-src="images/other1.jpg">
+		</div><!--end of upper div-->
+		<div id="lower">
+			<img src="images/shoe2.jpg" alt="images/shoe2.jpg" data-alt-src="images/other2.jpg">
+			<img src="images/shoe3.jpg" alt="images/shoe3.jpg" data-alt-src="images/other3.jpg">
+		</div><!--end of lower div-->
+	</div><!--end of wrapper div-->
+
+	
+</body>
+</html>
